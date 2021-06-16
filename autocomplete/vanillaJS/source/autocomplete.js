@@ -1,5 +1,5 @@
 // Main object
-function Autocomplete(id, token, resultsCallback, selectedCallback) {
+function Autocomplete({id, token, resultsCallback, selectedCallback}) {
     this.id = id;
     this.token = token;
     this.resultsCallback = resultsCallback;

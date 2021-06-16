@@ -7,21 +7,33 @@
     <title>Address Australia</title>
     <meta name="author" content="Address Australia">
     <meta name="description" content="The HTML5 Herald">
-
+    
+    <!-- Load Address Australia's CSS stylesheet -->
     <link rel="stylesheet" href='https://cdn.jsdelivr.net/gh/address-australia/examples/autocomplete/vanillaJS/source/autocomplete.css'>
-
 </head>
 
 <body>
     <h1>Autocomplete demo</h1>
+
+    <!-- Create an empty element where the search bar will be injected -->
     <div id='autocomplete'></div>
+    
+    <!-- Load Address Australia's JavaScript component -->
     <script src='https://cdn.jsdelivr.net/gh/address-australia/examples/autocomplete/vanillaJS/source/autocomplete.js'></script>
-    <!-- <script src="autocomplete.js"></script> -->
 
     <script>
         // Execute when loaded
         window.addEventListener('DOMContentLoaded', (event) => {
-            const autocomplete = new Autocomplete('autocomplete', 'website')
+            // Instantiate Address Australia's Autocomplete object with your API token and the ID of the parent element
+            const autocomplete = new Autocomplete({
+                parentId: 'autocomplete',
+                token: 'website'
+            });
+
+            // You can listen to the 'result' event that fires when results are fetched from the API
+            autocomplete.on('result', (address) => console.log(address));
+
+            // You can listen to the 'selected' event that fires when an address is selected from the dropdown
             autocomplete.on('selected', (address) => console.log(address));
         });
     </script>
