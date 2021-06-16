@@ -1,0 +1,29 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <title>Address Australia</title>
+    <meta name="author" content="Address Australia">
+    <meta name="description" content="The HTML5 Herald">
+
+    <link rel="stylesheet" href='https://cdn.jsdelivr.net/gh/address-australia/examples/autocomplete/vanillaJS/source/autocomplete.css'>
+
+</head>
+
+<body>
+    <h1>Autocomplete demo</h1>
+    <div id='autocomplete'></div>
+    <script src='https://cdn.jsdelivr.net/gh/address-australia/examples/autocomplete/vanillaJS/source/autocomplete.js'></script>
+    <!-- <script src="autocomplete.js"></script> -->
+
+    <script>
+        // Execute when loaded
+        window.addEventListener('DOMContentLoaded', (event) => {
+            const autocomplete = new Autocomplete('autocomplete', 'website')
+            autocomplete.on('selected', (address) => console.log(address));
+        });
+    </script>
+</body>
+</html>
